@@ -1,0 +1,108 @@
+{
+  "name": "Thêm mới mã Pixel cho website",
+  "route": "WebsitePixel/Add",
+  "sections": [
+    {
+      "type": "Form",
+      "sections": [
+        {
+          "type": "Row",
+          "sections": [
+            {
+              "type": "Col",
+              "configs": {
+                "span": "12"
+              },
+              "sections": [
+                {
+                  "type": "Input",
+                  "configs": {
+                    "inputType": "InputText",
+                    "label": "Tên mã Pixel",
+                    "placeholder": "Nhập tên mã Pixel"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Typography",
+          "configs": {
+            "level": "H4",
+            "text": "Thiết lập sự kiện"
+          }
+        },
+        {
+          "type": "Collapse",
+          "configs": {
+            "expandIconPosition": "right",
+            "bordered": "false"
+          },
+          "sections": [
+            {
+              "type": "CollapsePanel",
+              "configs": {
+                "header": "Events Name 1"
+              },
+              "sections": [
+                {
+                  "type": "Input",
+                  "configs": {
+                    "inputType": "InputText",
+                    "label": "Tên sự kiện",
+                    "placeholder": "Nhập tên sự kiện"
+                  }
+                },
+                {
+                  "type": "Typography",
+                  "configs": {
+                    "level": "Text",
+                    "text": "Điều kiện kích hoạt"
+                  }
+                },
+                {
+                  "type": "Button",
+                  "configs": {
+                    "type": "default",
+                    "text": "Thêm mới điều kiện kích hoạt"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "CollapsePanel",
+              "configs": {
+                "header": "Events Name 2"
+              },
+              "sections": [
+                {
+                  "type": "Input",
+                  "configs": {
+                    "inputType": "InputText",
+                    "label": "Tên sự kiện",
+                    "placeholder": "Nhập tên sự kiện"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Button",
+          "configs": {
+            "type": "primary",
+            "text": "Thêm mới sự kiện"
+          }
+        },
+        {
+          "type": "Button",
+          "configs": {
+            "type": "primary",
+            "text": "Hoàn tất"
+          }
+        }
+      ]
+    }
+  ]
+}

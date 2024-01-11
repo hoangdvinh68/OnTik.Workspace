@@ -1,0 +1,290 @@
+{
+	"name": "Danh sách tài khoản khách hàng",
+	"route": "Customer/List",
+	"sections": [
+		{
+			"type": "Row",
+			"configs": {
+				"classes": "mb-[24px]"
+			},
+			"sections": [
+				{
+					"type": "Column",
+					"configs": {
+						"span": "12"
+					},
+					"sections": [
+						{
+							"type": "Row",
+							"sections": [
+								{
+									"type": "Column",
+									"configs": {
+										"span": "8"
+									},
+									"sections": [
+										{
+											"type": "Button",
+											"configs": {
+												"text": "Tạo tài khoản khách hàng",
+												"type": "default",
+												"classes":"flex justify-center items-center px-[24px] py-[12px] bg-[#0061C1] h-[40px] rounded"
+											}
+										}
+									]
+								},
+								{
+									"type": "Column",
+									"configs": {
+										"span": "16"
+									},
+									"sections": [
+										{
+											"type": "Form",
+											"sections": [
+												{
+													"type": "Input",
+													"configs": {
+														"placeholder": "Tìm kiếm",
+														"inputType": "InputText",
+														"formControlName": "search"
+													}
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "Column",
+					"configs": {
+						"span": "12"
+					},
+					"sections": [
+						{
+							"type": "Row",
+							"sections": [
+								{
+									"type": "Column",
+									"configs": {
+										"span": "20"
+									}
+								},
+								{
+									"type": "Column",
+									"configs": {
+										"span": "4"
+									},
+									"sections": [
+										{
+											"type": "Form",
+											"sections": [
+												{
+													"type": "Input",
+													"configs": {
+														"placeholder": "Trạng thái",
+														"inputType": "Select",
+														"dataSource": "Predefined",
+														"formControlName": "status",
+														"options": [
+															{
+																"value": "1",
+																"label": "Đang hoạt động"
+															},
+															{
+																"value": "2",
+																"label": "Tạm dừng"
+															}
+														],
+														"valuekey": "value",
+														"labelkey": "label"
+													}
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "Table",
+			"configs": {
+				"scrollX": "600px",
+				"columns": [
+					{
+						"name": "STT",
+						"configs": {
+							"width": "70px",
+							"align": "center",
+							"pinLeft": true
+						}
+					},
+					{
+						"name": "Bật/Tắt",
+						"configs": {
+							"width": "100px",
+							"pinLeft": true
+						},
+						"sections": [
+							{
+								"type": "Switch",
+								"configs": {
+									"field": "active",
+									"level": "p"
+								}
+							}
+						]
+					},
+					{
+						"name": "Tài khoản khách hàng",
+						"configs": {
+							"width": "210px",
+							"pinLeft": true
+						},
+						"sections": [
+							{
+								"type": "Typography",
+								"configs": {
+									"field": "name",
+									"level": "p"
+								}
+							},
+							{
+								"type": "Typography",
+								"configs": {
+									"field": "email",
+									"level": "p"
+								}
+							},
+							{
+								"type": "Typography",
+								"configs": {
+									"text": "Chi tiết",
+									"level": "p"
+								}
+							}
+						]
+					},
+					{
+						"name": "Trạng thái",
+						"key": "status",
+						"configs": {
+							"width": "140px",
+							"pinLeft": true
+						},
+						"sections": [
+							{
+								"type": "Status",
+								"configs": {
+									"severity": "{{ status_serverity }}",
+									"text": "{{ business_type_description }}"					
+								}
+							}
+						]
+					},
+					{
+						"name": "Mã Afiliate",
+						"configs": {
+							"width": "200px"
+						},
+						"key": "affiliate"
+					},
+					{
+						"name": "Tổng tiền tài khoản OnTik",
+						"configs": {
+							"width": "200px"
+						},
+						"key": "totalCost"
+					},
+					{
+						"name": "Tổng tiền chưa nạp",
+						"configs": {
+							"width": "200px"
+						},
+						"key": "totalCostNotUsed"
+					},
+					{
+						"name": "Tổng tiền đã nạp",
+						"configs": {
+							"width": "200px"
+						},
+						"sections": [
+							{
+								"type": "Typography",
+								"configs": {
+									"field": "totalCostUsed",
+									"level": "p"
+								}
+							},
+							{
+								"type": "Typography",
+								"configs": {
+									"field": "totalCostRuningAds",
+									"level": "p"
+								}
+							},
+							{
+								"type": "Typography",
+								"configs": {
+									"field": "totalCostNotRunningAds",
+									"level": "p"
+								}
+							}
+						]
+					},
+					{
+						"name": "Loại tài khoản",
+						"configs": {
+							"width": "200px"
+						},
+						"key": "business_type_description"
+					},
+					{
+						"name": "Tên doanh nghiệp",
+						"configs": {
+							"width": "200px"
+						},
+						"key": "companyName"
+					},
+					{
+						"name": "Phone",
+						"configs": {
+							"width": "200px"
+						},
+						"key": "phone"
+					},
+					{
+						"name": "Mail doanh nghiệp",
+						"configs": {
+							"width": "200px"
+						},
+						"key": "companyMail"
+					},
+					{
+						"name": "Business Account",
+						"configs": {
+							"width": "200px"
+						},
+						"key": "businessAccount"
+					},
+					{
+						"name": "Agency Ads Account",
+						"configs": {
+							"width": "200px"
+						},
+						"key": "agencyAdsAccount"
+					}
+				],
+				"dataSource": "FromApi",
+				"dataSourcePath": "http://localhost:5104/endpoint?project=Customer_List&controller=Customer&action=GetCustomerAccount"
+			}
+		}
+	]
+}

@@ -1,0 +1,250 @@
+{
+  "name": "Onboard doanh nghiep",
+  "route": "Onboard/Business",
+  "sections": [
+      {
+          "type": "Row",
+          "sections": [
+              {
+                  "sections": [
+                      {
+                          "type": "Steps",
+                          "configs": {
+                              "direction": "vertical"
+                          }
+                      },
+                      {
+                          "type": "Input",
+                          "configs": {
+                              "inputType": "InputText",
+                              "formControlName": "search",
+                              "label": null,
+                              "placeholder": "Tìm kiếm"
+                          }
+                      }
+                  ],
+                  "type": "Column",
+                  "configs": {
+                      "span": 8
+                  }
+              },
+              {
+                  "sections": [
+                      {
+                          "type": "Typography",
+                          "configs": {
+                              "level": "H3",
+                              "text": "Thông tin doanh nghiệp"
+                          }
+                      },
+                      {
+                          "type": "Form",
+                          "sections": [
+                              {
+                                  "type": "Input",
+                                  "configs": {
+                                      "inputType": "InputText",
+                                      "formControlName": "businessName",
+                                      "label": "Tên hiển thị doanh nghiệp",
+                                      "placeholder": "Tên hiển thị doanh nghiệp"
+                                  }
+                              },
+                              {
+                                  "type": "Input",
+                                  "configs": {
+                                      "inputType": "InputText",
+                                      "formControlName": "businessAddress",
+                                      "label": "Địa chỉ doanh nghiệp",
+                                      "placeholder": "Địa chỉ doanh nghiệp"
+                                  }
+                              },
+                              {
+                                  "type": "Input",
+                                  "configs": {
+                                      "inputType": "Select",
+                                      "formControlName": "businessCountry",
+                                      "label": "Quốc gia đăng ký doanh nghiệp",
+                                      "placeholder": "Quốc gia đăng ký doanh nghiệp",
+                                      "dataSource": "FromApi",
+                                      "dataSourcePath": "http://localhost:5191/test",
+                                      "labelKey": "name",
+                                      "valueKey": "id"
+                                  }
+                              },
+                              {
+                                  "type": "Input",
+                                  "configs": {
+                                      "inputType": "Checkbox",
+                                      "formControlName": "businessType",
+                                      "label": "Loại doanh nghiệp",
+                                      "placeholder": "Loại doanh nghiệp",
+                                      "dataSource": "Predefined",
+                                      "options": [
+                                          {
+                                              "label": "A",
+                                              "value": "a"
+                                          },
+                                          {
+                                              "label": "B",
+                                              "value": "b"
+                                          },
+                                          {
+                                              "label": "C",
+                                              "value": "c"
+                                          } 
+                                      ],
+                                      "labelKey": "label",
+                                      "valueKey": "value"
+                                  }
+                              },
+                              {
+                                  "type": "Button",
+                                  "configs": {
+                                      "type": "primary",
+                                      "htmlType": "submit",
+                                      "text": "Lưu"
+                                  }
+                              }
+                          ],
+                          "triggers": {
+                              "submit": [
+                                  {
+
+                                  }
+                              ]
+                          }
+                      }
+                  ],
+                  "type": "Column",
+                  "position": 0,
+                  "configs": {
+                      "span": 16
+                  }
+              }
+          ]
+      },
+      {
+          "type": "Row",
+          "sections": [
+              {
+                  "type": "Column",
+                  "configs": {
+                      "span": 24
+                  },
+                  "sections": [
+                      {
+                          "type": "Table",
+                          "configs": {
+                              "columns": [
+                                  {
+                                      "name": "Bat/tat",
+                                      "key": "Active",
+                                      "sections": [
+                                          {
+                                              "type": "Switch"
+                                          }
+                                      ]
+                                  },
+                                  {
+                                      "name": "Name",
+                                      "key": "name"
+                                  }, 
+                                  {
+                                      "name": "Age",
+                                      "key": "age" 
+                                  },
+                                  {
+                                      "name": "Gender",
+                                      "key": "gender"
+                                  }
+                              ],
+                              "dataSource": "FromApi",
+                              "dataSourcePath": "http://localhost:5191/test",
+                              "pageSize": 24
+                          }
+                      },
+                      {
+                          "type": "Table",
+                          "configs": {
+                              "columns": [
+                                  {
+                                      "name": "Id",
+                                      "key": "id"
+                                  },
+                                  {
+                                      "name": "Name",
+                                      "key": "name"
+                                  }, 
+                                  {
+                                      "name": "Utc Offset",
+                                      "key": "utcOffset" 
+                                  }
+                              ],
+                              "dataSource": "FromCollection",
+                              "collectionName": "timezones",
+                              "pageSize": 24
+                          }
+                      },
+                      {
+                          "type": "Modal",
+                          "configs": {
+                              "elementId": "Modal01",
+                              "title": "test modal",
+                              "okText": "Ok",
+                              "cancelText": "Cancel",
+                              "triggerFrom": "Outside"
+                          },
+                          "sections": [
+                              {
+                                  "type": "ModalContent",
+                                  "sections": [
+                                      {
+                                          "type": "Typography",
+                                          "configs": {
+                                              "text": "Cai gi do",
+                                              "level": "Text"
+                                          }
+                                      }
+                                  ]
+                              }
+                          ]
+                      },
+                      {
+                          "type": "Button",
+                          "configs": {
+                              "text": "Show modal"
+                          },
+                          "triggers": {
+                              "click": [
+                                  {
+                                      "triggerName": "TOGGLE_MODAL",
+                                      "triggerData": {
+                                          "targetId": "Modal01"
+                                      }
+                                  }
+                              ]
+                          }
+                      },
+                      {
+                          "type": "Button",
+                          "configs": {
+                              "text": "Redirect"
+                          },
+                          "triggers": {
+                              "click": [
+                                  {
+                                      "triggerName": "REDIRECT_TO",
+                                      "triggerData": {
+                                          "targetUrl": "/feature?c=Onboard&v=Business_2",
+                                          "targetMode": "Self"
+                                      }
+                                  }
+                              ]
+                          }
+                      }
+                  ]
+              }
+          ]
+      }
+  ]
+}
