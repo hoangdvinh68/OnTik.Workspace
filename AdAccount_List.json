@@ -20,7 +20,7 @@
               "sections": [
                 {
                   "type": "Input",
-                  // "formControllName": "accountName",
+                  "formControllName": "accountName",
                   "configs": {
                     "inputType": "InputText",
                     "placeholder": "Tìm kiếm tài khoản quảng cáo"
@@ -30,7 +30,7 @@
                   "type": "Input",
                   "configs": {
                     "inputType": "Select",
-                    // "formControlName": "status",
+                    "formControlName": "status",
                     "placeholder": "Trạng thái",
                     "allowClear": true,
                     "options": [
