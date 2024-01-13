@@ -124,7 +124,8 @@
                             {
                                 "type": "Switch",
                                 "configs": {
-                                  "field": "active"
+                                  "field": "active",
+                                  "control": true
                                 },
                                 "triggers": {
                                   "click": [
@@ -329,7 +330,7 @@
                       "type": "Typography",
                       "configs": {
                         "level": "P",
-                        "text": "{{ data.active === 'true' ? 'Hành động sẽ khiến khách hàng không thể truy cập vào tài khoản quảng cáo, bạn vẫn muốn tắt tài khoản quảng cáo này?' : 'Hành động này của bạn sẽ mở quyền truy cập lại cho khách hàng, bạn vẫn muốn bật tài khoản quảng cáo này?' }}",
+                        "text": "{{data.active}}{{#data.active}}Hành động sẽ khiến khách hàng không thể truy cập vào tài khoản quảng cáo, bạn vẫn muốn tắt tài khoản quảng cáo này?{{/data.active}}{{^data.active}}Hành động này của bạn sẽ mở quyền truy cập lại cho khách hàng, bạn vẫn muốn bật tài khoản quảng cáo này?{{/data.active}}",
                         "classes": "font-[500] text-[15px] text-center"
                       }
                     },
@@ -337,15 +338,7 @@
                       "type": "Typography",
                       "configs": {
                         "level": "P",
-                        "text": "{{ data.active }}",
-                        "classes": "font-[500] text-[15px] text-center"
-                      }
-                    },
-                    {
-                      "type": "Typography",
-                      "configs": {
-                        "level": "P",
-                        "text": "{{ data.active ?? '(Tài khoản quảng cáo bị khoá sẽ tạm dừng quảng cáo và giữ nguyên số dư cho đến khi có hành động tiếp theo)' }}",
+                        "text": "{{#data.active}}(Tài khoản quảng cáo bị khoá sẽ tạm dừng quảng cáo và giữ nguyên số dư cho đến khi có hành động tiếp theo)' {{/data.active}}",
                         "classes": "font-[400] text-[10px] text-center text-[#979797]"
                       }
                     }
@@ -548,7 +541,7 @@
                       "type": "Typography",
                       "configs": {
                         "level": "Text",
-                        "text": "Doanh nghiệp",
+                        "text": "Test {{ modalData.accountType }}",
                         "classes": "font-[500] text-[14px] leading-[20px]"
                       }
                     },
@@ -567,7 +560,7 @@
                           "type": "Typography",
                           "configs": {
                             "level": "Text",
-                            "text": "OnTik Account Name",
+                            "text": "{{ data.accountName }}",
                             "classes": "font-[500] text-[14px]"
                           }
                         },
